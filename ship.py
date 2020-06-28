@@ -1,5 +1,6 @@
 import pygame
 
+
 class Ship():
     """A class to represent a player ship object"""
 
@@ -19,7 +20,6 @@ class Ship():
         self.rect.centerx = self.screen_rect.centerx
         # Match the ships bottom y-coordinate match the screens bottomy
         self.rect.bottom = self.screen_rect.bottom
-
 
     def blitme(self):
         """Draw the ship at it's current location"""
