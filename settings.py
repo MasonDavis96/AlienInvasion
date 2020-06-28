@@ -7,4 +7,7 @@ class Settings():
         # Screen settings
         self.screen_width = 1200
         self.screen_height = 800
-        self.screen_color = (100, 70, 150)
+        self.screen_color = (29, 41, 81)
+
+        # Ship settings
+        self.ship_speed_factor = 1.5
