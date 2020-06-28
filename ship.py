@@ -21,6 +21,19 @@ class Ship():
         # Match the ships bottom y-coordinate match the screens bottomy
         self.rect.bottom = self.screen_rect.bottom
 
+        # Movement flag
+        self.moving_right = False
+        self.moving_left = False
+
+
+    def update(self):
+        """Update the ship's position based on the movement flag"""
+        if self.moving_right:
+            self.rect.centerx += 1
+        if self.moving_left:
+            self.rect.centerx -= 1
+
+
     def blitme(self):
         """Draw the ship at it's current location"""
         self.screen.blit(self.image, self.rect)

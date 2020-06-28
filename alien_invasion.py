@@ -19,7 +19,10 @@ def run_game():
     # The main loop for the game
     while True:
         # Check key presses/mouse events
-        game_functions.check_events()
+        game_functions.check_events(ship)
+
+        # Update ship position
+        ship.update()
 
         # Update/re-draw screen
         game_functions.update_screen(game_settings, screen, ship)
