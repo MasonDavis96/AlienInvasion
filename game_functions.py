@@ -75,3 +75,6 @@ def fire_bullet(game_settings, screen, ship, bullets):
         # Create a new bullet and add it to the bullets group
         new_bullet = Bullet(game_settings, screen, ship)
         bullets.add(new_bullet)
+
+        # Play laser sound effect
+        pygame.mixer.Sound.play(ship.laser_sound)
