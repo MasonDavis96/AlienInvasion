@@ -16,6 +16,8 @@ def check_keydown_events(event, game_settings, screen, ship, bullets):
         ship.moving_left = True
     elif event.key == pygame.K_SPACE:
         fire_bullet(game_settings, screen, ship, bullets)
+    elif event.key == pygame.K_q:
+        sys.exit()
 
 
 def check_keyup_events(event, ship):
@@ -77,4 +79,4 @@ def fire_bullet(game_settings, screen, ship, bullets):
         bullets.add(new_bullet)
 
         # Play laser sound effect
-        pygame.mixer.Sound.play(ship.laser_sound)
+#        pygame.mixer.Sound.play(ship.laser_sound)

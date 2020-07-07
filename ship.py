@@ -13,7 +13,7 @@ class Ship():
         self.image = pygame.image.load('images/ship.bmp')
 
         # Load sound effect for firing the laser
-        self.laser_sound = pygame.mixer.Sound('audio/laser.wav')
+#        self.laser_sound = pygame.mixer.Sound('audio/laser.wav')
 
         # Resize image
         self.image = pygame.transform.scale(self.image, (80, 80))
