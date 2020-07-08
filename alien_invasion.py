@@ -17,6 +17,12 @@ def run_game():
     # Make a ship
     ship = Ship(game_settings, screen)
 
+    # Make initial group of aliens
+    aliens = Group()
+
+    # Create a full fleet of aliens
+    game_functions.create_fleet(game_settings, screen, ship, aliens)
+
     # Make a group to store bullets
     bullets = Group()
 
@@ -32,7 +38,8 @@ def run_game():
         game_functions.update_bullet(bullets)
 
         # Update/re-draw screen
-        game_functions.update_screen(game_settings, screen, ship, bullets)
+        game_functions.update_screen(game_settings, screen, ship,
+                                     aliens, bullets)
 
 
 run_game()
