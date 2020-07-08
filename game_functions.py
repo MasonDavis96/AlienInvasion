@@ -126,3 +126,25 @@ def create_fleet(game_settings, screen, ship, aliens):
         for alien_number in range(number_aliens_x):
             # Create alien and place it in row
             create_alien(game_settings, screen, aliens, alien_number, row_number)
+
+
+def check_fleet_edges(game_settings, aliens):
+    """Change direction of fleet if the fleet reaches an edge"""
+    for alien in aliens.sprites():
+        if alien.check_edges():
+            change_fleet_direction(game_settings, aliens)
+            break
+
+
+def change_fleet_direction(game_settings, aliens):
+    """Drop the entire fleet and change the fleet's direction"""
+    for alien in aliens.sprites():
+        alien.rect.y += game_settings.fleet_drop_speed
+    game_settings.fleet_direction *= -1
+
+
+def update_aliens(game_settings, aliens):
+    """Check if a fleet is at an edge,
+        the update the position of all aliens in the fleet"""
+    check_fleet_edges(game_settings, aliens)
+    aliens.update()

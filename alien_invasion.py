@@ -37,6 +37,9 @@ def run_game():
         # Update bullet position (delete bullet if applicable)
         game_functions.update_bullet(bullets)
 
+        # Update aliens
+        game_functions.update_aliens(game_settings, aliens)
+
         # Update/re-draw screen
         game_functions.update_screen(game_settings, screen, ship,
                                      aliens, bullets)
